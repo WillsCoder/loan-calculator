@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+}
+.header {
+  width: 100%;
+  margin: 20px;
+  height: 80px;
+  overflow: ;
+}
+#lhs {
+  width: 50%;
+  display: inline;
+  float: left;
+}
+#lhs img,
+#lhs h1 {
+  float: left;
+  padding-inline: 10px;
+  align-items: center;
+}
+#rhs ul {
+  float: right;
+  list-style: none;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+}
+span {
+  background-color: rgb(184, 218, 238);
+  padding: 10px;
+  border-radius: 10px;
+}
+#rhs ul li:hover {
+  font-size: 1.1em;
+  border-bottom: 2px solid grey;
+}
+
+.image {
+  float: right;
+  width: 60%;
+}
+.intro {
+  float: left;
+  width: 35%;
+  margin-top: 120px;
+  margin-left: 30px;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+.intro section {
+  text-align: center;
+}
+.form {
+  clear: both;
+  margin: 70px 30px 30px 50px;
+  width: 40%;
+  height: 500px;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 4px grey;
+  padding: 10px;
+  float: left;
+}
+.form input,
+.form label {
+  display: block;
+  padding: 10px 10px 10px 0px;
+}
+.form input {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+.form input.hover {
+  box-shadow: 2px 2px 2px grey;
+}
+.form button {
+  padding: 10px;
+  width: 95%;
+  margin-top: 40px;
+  border: hidden;
+  cursor: pointer;
+  background-color: rgb(184, 218, 238);
+}
+.result {
+  float: right;
+  width: 40%;
+  height: 500px;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 4px grey;
+  padding: 10px;
+  margin: 70px 20px 30px;
+  display: block;
+  padding: 20px;
+  background-image: url("https://www.ndtv.com/education/cache-static/media/presets/625X400/article_images/2021/7/31/shutterstock_262108769.webp");
+  background-size: fill;
+  background-position: center;
+}
+.result h2 {
+  text-align: center;
+  display: none;
+}
+.result:hover {
+  align-items: center;
+  background-image: url("https://cdn3.vectorstock.com/i/thumb-large/72/82/winking-smiley-gesturing-with-his-hand-vector-21917282.jpg");
+  background-repeat: no-repeat;
+}
+.result:hover h2 {
+  display: block;
+}
+.display {
+  display: none;
+  background-color: white;
+  margin: 0;
+}
+.display p {
+  padding: 15px;
+}
+#interest,
+#cummulative,
+#months,
+#permonth {
+  border-bottom: 1px solid grey;
+  margin-left: 1px;
+  text-align: center;
+  font-size: 1.3em;
+}
+#main {
+  margin: 1px;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+}
+.note {
+  clear: both;
+  margin-left: 20px;
+}
+.news {
+  margin: 60px auto;
+  width: 75%;
+}
+.news img {
+  float: left;
+  border-radius: 50%;
+  margin: 25px 5px 10px 30px;
+  display: block;
+  align-items: center;
+}
+.news p {
+  float: left;
+  padding: 10px;
+}
+.news1,
+.news3 {
+  background-color: rgb(157, 208, 231);
+  width: auto;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 2px;
+}
+.news2,
+.news4 {
+  background-color: rgb(174, 220, 235);
+  width: auto;
+  height: 200px;
+  border-radius: 20px;
+  margin-bottom: 2px;
+}
+.news h4,
+.news p {
+  float: right;
+  width: 75%;
+  text-align: justify;
+  margin-right: 20px;
+}
+.footer {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  background-color: grey;
+  text-align: center;
+  padding: 0px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  #lhs {
+    width: 100%;
+    display: inline;
+    float: left;
+  }
+  #rhs {
+    width: 100%;
+    clear: right;
+    margin: 20px 0px 0px;
+    display: inline-flex;
+    justify-items: center;
+    justify-content: space-evenly;
+  }
+  #rhs ul {
+    display: block;
+    width: auto;
+    margin: 20px;
+  }
+  #rhs ul li {
+    padding: 10px;
+  }
+  .image {
+    width: 100%;
+    height: 500px;
+    margin-top: 180px;
+  }
+  .intro {
+    width: auto;
+    font-size: 16px;
+  }
+  .form,
+  .result {
+    width: 98%;
+    margin: 20px auto;
+    display: block;
+    margin-top: 50px;
+    align-content: center;
+  }
+  .news img {
+    display: none;
+  }
+  .news h4,
+  .news p {
+    width: auto;
+    margin: 10px 5px 5px;
+  }
+}

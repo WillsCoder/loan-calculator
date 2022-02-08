@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="steps to take to eliminate depression" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css.practice/css/loancal.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div id="lhs">
+        <img
+          src="./images/Untitledlogo.png"
+          alt="logo"
+          width="80"
+          style="border-radius: 50%"
+        />
+        <h1>LOAN CALCULATOR</h1>
+      </div>
+      <div id="rhs">
+        <ul>
+          <li><span>Home</span></li>
+          <li>News</li>
+          <li>About</li>
+        </ul>
+      </div>
+    </div>
+    <!--header-->
+    <div class="image">
+      <img src="./images/loanpic.jpg" height="550px" width="100%" />
+    </div>
+    <!--image-->
+    <div class="intro">
+      <section>
+        Applying for loans from local banks and individuals can sometimes leave
+        you in a confused state when details of the loans are brought forward.
+        The most important terms in taking out a loan are;
+      </section>
+      <ul>
+        <li>Loan Amount: The amount of loan applied for.</li>
+        <li>
+          Loan Interest Rate: The percentage interest of which the loan is
+          given.
+        </li>
+        <li>Loan Term: The duration for repayment of the loan</li>
+      </ul>
+    </div>
+    <!--intro-->
+    <div class="form">
+      <h2>Loan Calculator</h2>
+      <form>
+        <label>Loan Amount</label>
+        <input type="text" id="loan" />
+        <label>Loan Interest Rate</label>
+        <input type="number" id="rate" />
+        <label>Loan Term</label>
+        <input type="number" placeholder="years" id="term" />
+        <label>Loan fees</label>
+        <input type="text" id="fees" />
+        <button type="button" onclick="myFunction();viewBox()">SUBMIT</button>
+      </form>
+    </div>
+    <!--intro-->
+    <div class="result">
+      <h2>ENTER YOUR LOAN DETAILS THERE</h2>
+      <div class="display" id="display">
+        <div id="main"></div>
+        <p>The total Interest to be paid will be</p>
+        <div id="interest"></div>
+        <p>The cummulative payment</p>
+        <div id="cummulative"></div>
+        <p>Number of payments</p>
+        <div id="months"></div>
+        <p>Monthly payment for the loan term</p>
+        <div id="permonth"></div>
+      </div>
+    </div>
+    <!--result-->
+    <div class="note">
+      <p>NOTE</p>
+      <ul>
+        <li>
+          The loan calculator assumes that the interest rate remains constant
+          throughout the life of the loan
+        </li>
+        <li>
+          The calculator assumes that the loan will be repaid in equal montly
+          installments through standard loan amortization
+        </li>
+        <li>
+          The loan fee (if included) is added to the repayable loan amount
+        </li>
+      </ul>
+    </div>
+    <!--note-->
+    <br />
+    <br />
+    <div class="news">
+      <h3>Related news</h3>
+      <div class="news1">
+        <img
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBIREA8PDxIREQ8PDxEQDxAQEREQEREQGBQZGRgUGBgcIzAlHB4rIRgYJjgmKy8xNTU1GiQ7QDtAPy40NTEBDAwMEA8QHBISHjQhISc6MTQ9NDExMTQ0NDQxMTQ0MTE0NDQxNDE0NDQ0NDQ0NDExNDQ0NDQxPzQ0MTQ0NDQ0NP/AABEIAKMBNgMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAAAQIEBQYDB//EAEYQAAIBAgMECAIGBgcJAQAAAAECAAMRBBIhBRMxUQYUIkFhcZGhgbEjMkJSwcIHYpKi0dIVNENTcoKyFzNUY3OEk+HwFv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAwIEBf/EACARAQACAgIDAQEBAAAAAAAAAAABAhESAzEhIkETMkL/2gAMAwEAAhEDEQA/APnkcUcOhCEcIBHCOEEIQgEI4QCOEIBHCEBwhHKCEIQhwhCUEIRwCEIQFHCEBQjhAUIQgKEcUAijhAiYjJGIwImRkjFAjCOECMBEJKcuwI4QhBHCOEEBCOAQhCARwhAI4QEocIRwghCEocIRwFCOEBQjhAUI4oBCSdGU2ZWU8bMCptz1hTRnYIiszsbKqgsxPIAcYEYoyO48RCAoQhAUI4oCijMUBGRMkZEwFCEIERHCOcuxHCEJIjhCEOEIQHCEIBCEcAgI4SgjijlQ4QEcAhCEgIRxQohCEqCdr0DoImHx+0Mi1K+GCJRDjMEzcXt+PIHnOKnU9DNsNhesBMrGoFuji6OBfQj4mRXSUsS20sLjaWLCOaNB61KsEVWpuoJGo8vS8x+hmCGHoVNqVAM5DUsCrD7diHq+Q1Hrzm5s/Htiw+Co0aOFpVlbfblQvY+25PDh4cSItr7NqYumFw70sLgqCihRqVnyJkXTs87kcdIHzGs5Z3ZiSzOzMTqSSbkmQmtt7YFfBMgrZGSoCaVWm2em4HI9x4aTJlQoQhAIo4oCMUZiMBRGMyMBQhCAoxCAnLs44QhBGIQhBHFHAIQjgEIQgOEIShxxRyoI4QgOEBCRRCEcBQhHAUaOVNwbEd8UIH0PDA7P2feqSMVjED1L/Wp0Psp4E9/meUu1sNUx2zcA+GXO9NCKlEOiHMbdrtEDuPrOE2ttFqi00Ls+VFzMzFiSBYC55T1wG1MtNELlGS4VgSpse64gdN0yw5w+ycLhqpBr9Zz5QQ26XI/Zv8fnPns1dq7Q3ipTBJVWLEnW7TKhChHFKFCEJAjEYzEZRGIxwMiowhCVBHFHOXQjijgEcQjtCCOKOARxQgOEUJRKEUYMIYjkY5RKEUIDjkbzoujvRzreR6lWnTR8+Smro2JrFASyohOnA6mRWFSou+YIjPlUu2RS2VBxY24Ac50q9FGbC0XRalSvXp06+8ZqdLCUaT8EZ3+u5HcDp89Po89DEYarhKKV6b0XqVKmGpsiYjaFG/ZR3NspHBlBtbzmU6DD1xhjSp493IenhBVrVKWEqZmO6sDlqGxF/LzgU8D0bq1MU+EqVKOHroQClZ7Fri4yWBD6EHQ986t+geGwtCricVWqVRRpvUZEApI2VScvexudOI4yjj8PTwrtjtrlMTtCrZ6eBQjImgCmoRplAAFuGnfPPa/St8VskU6hXrNXFMlQKMo3KEVAQOWqL/lMDjBNfZ2wKuIVWR6ID8A7nMPNVBImRO56Kt9HTGVF4almF/E9sCZ8lprGYd0rFpwq/wCz/F2DGphwPOt/JPZP0b4wgHe4ax/WrH8k7l30WzoeQVgfzzTpsci3ccO8g/nnEcky6mkQ+TbR6E4jDo7vUw9kRnIzVASAL2F0Gs5WfYOluJVaFYdhr0nGYA3F1Iv2Xnx+d0tNs5cWrFcCKEJq4EUIQEYjGYjAiYjHEYUoQhCCOREc5U44o4BHFCBKEUIDinthcM9WolKkueo5yol1XMbXtckCW8VsLF0i61cPUQ06e9fs5gtK9sxK3Fr39JRnQvLNDZ9aooenRq1FZyimnTd7uFzFRlBuba+U9G2PixlvhcUMzZFzYequZvui66nQ+kCnGJrJ0YxxemhwtRWrMVp5wEDEKWPE6WAJ+EnX6M103ZzYeolSsuH3tKulSnTqsbBKhX6vpAxhHNvaOwqdBhTOLR6y4hKNYLQqilQJNmZ6rWGnK2omztPYAwo3uGwbYlMMzPUq169CtSrUgjAvuUOYLchgb8BqIHGDn3A2J7r8pt7G2RSqYfEYvEVHWlhiivTw6q9c5iAGs2ipc2ub8Dyml0hx1TEbOwVdMqUC70MTh6KKlJMSl2R8oHehvqdLCZXRjbXUsStVgzUnU06yLbMyHgRfTMCARA6TYOzkwm1VoJUJGJ2e70jWRd5TZ0zKrpwzDIdPGUdrYzZ7q9fCE4fHUHp1FqrTelTxDA9rdpmIQ3N+0O7zl/ZuG2vjQhNqaK4anjMTTRMSgBP1GUBjcGx0sbnXWWnwuy9k9quxxmNGuQ5WKvzyfVTza55QM2hsPEbTrnG7sYCk6K1asWZQ72s9RF0IDenHUyWK29hNnI2H2SoesRlq45wHJ55Of+nzmP0h6VYnGkq7buhfs0EJC+Gc8XPnp4TBgelaszuzuzO7nM7uSzMeZJkIoSoc7noslPIgOcmwva/HznCzvOjDMUpktl7I7K0CTbzyG/dMObqG3D3LsyU7I+lA0+8fkZqqgCL/ALy1u/OJisRYWqOfA0l/kmvRK5FJZr2/u0HyQTGv1pb45jplXVMPWH0mY03yku1rkW1BvefJJ9f6WUkejWGewNN7lky2sL8Qmk+QTbh+suX4UIQm7IRRxQAxRxQEZEyRkYChCECIMc9uqmHVTON4d6y8QY57dVMYwpjeDWXjHPbqpj6q0bway8I7z26q0OqtG8GsvfYtFHxNFalSnSQOru9ZiqZVYErcA6kXtfTxnattdcPiNuY2nVw9VnGFagFdaiOjVCpQjvNhqBwvMboNsuhUxTjGCmaK4dyFqsEUvmQC1yNbZp3b9GdjHU08OPLEuo9nl2iUxMOQ6QYqgmzcM+z3ektbH1K+7RylTDsaJV6d1N8oJ08CJ6bS2qU2pst2rNuer4F3vVJpqSCrswvYG3EmdGejWw1Nz1cHxx1T8akiNl7AT/hD/wBw9T85jMGJYOLfD0cbhsSjYNVTHhmentCpi6z03cqzlD2EUA5iAdOHnS2rtfBPQxWGw56m1PFVMRTdM1enjXUnIWc9pD3j7InUvV2BT/s8K3gMNUrfkIh/+t2ZR/q+GY8tzhqVMX/zFZNoNZYG2tsDaKOKVHadY1ETJSUKuEpVAoGcBFJfW57R7+6WMFsnaLo6UNnYPBPVpGi+JsKdQ02tmULmYrewv2feXcT+kduFHBkj71Wrb91VPzmHjem20qlwjU6AP91SBa3K7lva0bQustjA/o8KIeuYwrRBDvTo9imGAtmLvpw0vlnt/S2xtm/1amuIrrwdPpmv/wBV9AP8PpOBxL4rEt9NUrV2vcB2d7f4V7vhPH+jqo0KOPNGjaE1l0O2unOLxOZEYYakdMlIneEfrPx9LTl7+/Ge4wdT7rehkThX5H0l2g1l5jXQcTwAnt1Spp9G4vqLqRf1ip0HV1NyuVlNwNVseIn0vYmJFgd9WN7cUqgcb/fM4vyxV3Xjmz5p1V/uN6SYwFU8KbnyUn5T7PTrAsCKlXU3IyVP4zSaoNADU8zvB82E4jmy6niw+C18DWRc70qqJe2Z0dVueAuRad70WdTToBrHLTQfWAB9RrPb9IDZ8KVDO3bpkBg9hrxuXPyMzeheKFlRs907I+kcKPIaWkvfauVpTWcO4qMgI0IOlu3Tt72l5cUgRdR/5af8xlJjfL2nN+NqjXt8LzRFG6L2n561GHw1mdZl1aIc70qxydVxA0J3NQAZlck5TpoZ8cn2HpbWdMLiFAZ70nAO+ewupF7DQz5BuGm3FbvLK9esIGEnuGi3DTXaHGsowj3DcobluUbQmsokxXkty3KLctyjaDWULwvJblojRblG0LiUbwgaLcoRtCay6UYXwkuqzVFGPcifP/R7/wA2V1WHVZrbmPcx+h+bJ6tH1aau5Ee5Em6/myeqiPqomtuBAYeNz82V1QcodVHIek1urw3Al3T82V1Uco+qjlNTcRGjG66M0YS+gFzyAuZL+j2+437Jmxgks4syg62uWBPlZTOsSmwQE5SCALkIfmk7rOYyztGJw+ddTP3Tp4QOFtxU+hn0zB0qbX7FNiP1aRsfTSRxdBcpsqX8qQ188hlx47TM56fPtmLkqBgG4EdguD3fdBNp3WAq9i5qVAe4FqgA9pxW1SM5cmw3q3ysvPnlA9p1Wy8SgS28tp3vR4ekkSsw2cFUuxGd7eIYi/xWTxFS1+2beGcE8/smVdnYlQ18wa/N6P8AMJZxVUsDZrDwajf5zqOnMx5cB0ofPVznN2Evckk8e66D5GdBsFEKKRnsR9wn5oJh7Zo9tzmLkqScz02tx0GXgPOenRBQ1JCVqHQXO8yj2tOcu8eHYUiA4ux496Jf3WXazX0BY6W1QfgsyqSoGHYca99Um/h9fhNN0S2q30uLve/7xliYw4mPLjel1FSEHaJz3uVKqOydNUGvxmd0Qp07kmoysW7QDm1+B+xYeU1+kdMF0C08ovx0PdzteY/RPBqXdgRmLuWGeg1jn4HNqJInPTvGI8u3Yoco3hPAdx+ay+aYCqFYjT7KKb/uyhuGBFhy4CmPkZoOj5R2e4W0T8SZ1GXE4cz0pQbpyXLMQFVW5E66ZB3X75w/VRynfbewSmk7to6/VUNSXv7wFufWcpuZxa2Jd1rmGZ1UcouqjlNTdQ3Um7rRl9VHKLqg5TV3UW6jdNGV1QcoHCjlNXcyJoxuaMvqo5RHCjlNXdRGlLumrJOFHKE1DShG8mrS3PlJCj5S0KXgPWApeHvPJs9OFbc+Ue58pZ3Ph7wFHw942XCrufCMUvAessbjw949z4e8ZMKxTw95E2/+Mt9X8PeQbBKeIv8AGNjDxwNNHqkOgZRpbOFPDxYc5tVdiYMgWoOL66VGtfn2XMjs3CUxlGXhfjZvmJsvRpgWyL+yn8J6Kcnjw896efKjT6L4NlDPQbTQfSV7ekzdr7PwuHRmSlawP1qjn2LzraKrk0AAv91ZSxJQA3UM3PKn8t5ra/jtlWvl89SpmqYcKLnViB2rLYfrA+87nCXyD8FYfJ5z2C2LRWq9QKczkkknNqTfQG4E6WnglyaaaclHyAmNbVnptasx2u7MZu1mJ4d4eeG03JUjU6W0SofzT0wODWxBAPmoM8cXglym4H7FP8RNZt6soj2fM9uVgiOt7E1UIHA2LKdLkzr9iVr00s9wVtYqjH2eZuN6PYd6udkOa4NwxXUC3dOh2fs8KgUO4A4A5WA9RMo5KzOIa2pPcruBXt6C/nTe3sTPfFVGAOijypke7MJHAYU3tnPxWmfyyeNwZYEF2+CoPks1i3rnDKY9u3zzbm0Aj1czDME7AOoJ17sx7/GaPQ7DMlJRvdLX7NS1teHZYyW0ej9B3LOmZvvFmvp4ibuxcIiLZWdf82b/AFAzOvJWZx9aWrMRlcpK5cdttCP7QmXcQ5t9bh/zHAnjSojMO03xWkfyyxWoW+2/wFMfJZrExiWUx5hxfSGsqsjPUUdogDNmHDXW/wCEwOiThndtbtUcmw11c8nE67pHs6nWCCoC4VrgOSQDa1wBpKmxti0UP0aBdb6XPzmM8lYnENorMxEy2EJutzUv/gqH5OZqOxsv1+H3an4sJW6vwFz+7/CX3pdlbE/u/wAJtW3bK8dOR27XAOXUX457j4Dtn5TGzrzE6va2FBVrgG+lyJgHApyA9Z5r2jPlvSvhSDDmI8w7rS6MIvKPqoHCc7Q0xKh6R28Jf6uIhStG0GFIKeUeQ8hLhpRbqNjCmUPISJpnl7y6aR5xGkecbGqlujyhLZpnnCNjC7u/CPd+EsBDGEMxyqsKfhA0/CWghjymTK5VAnhJCn4GWghjymMmVQ0/Ax7vzlvLACMmXlQGUjjLbVp5ASU6i0w5mMrlPE2S3jKlWre8L6SLS2vMxhIrES8qC6zXR+zaZyDwlpX0lpbCWjLQwT2zeU8sW9xPOg9gZ51nvNpv64ZxX2yzWQFze818KgCzPUdrhNGgdJlxz5d36WcLoZ6VjxnlQbWOo89MW9WE19mLj07UsYEWHfFiRdp64aeaP7bz/K5T+tLFUyuh1nq5nprPhhMeWTtBbw2aljPXEreSwi2mGPdtn1XLayy3AeU8FE9jwnprLCyhtBLoZgvR8Z0OLF1tMl0nm5e2/H0p7rxkWp2lsp4RFJjlqqZIbuW8kMkZFTdiLdiWsgi3cZFU0hEaQlrdxbuNhVNMRS0accZFoUl5e5khSXl7mEJ2zSFJeXuYxSXl7mEJA90vL3MN0vL3MIQDdLy9zDdLy9zCEA3S8vcyW6Xl7mEIJPdLy9zImkvL3MISiS0l5e5noKS8vcxwlglNaS8vcxNSXl7mEJp8cvMUl5e5lmnTFv8A2Y4SVLJ01EHUQhNPjj6q1KS34e5npSpjl7mEJnHbuenuqiTYQhNo6ZSr1aY5e5kqKDlFCZ/6d/FkCehEITaGMq1caSm9JeXuYQmV+21EN0vL3Mjul5e5jhMGg3S8vcwNJeXuYQgLdLy9zEaS8vcwhAW6Xl7mLdLy9zCEgZpLy9zFCED/2Q=="
+          alt=""
+          width="150"
+          height="150"
+        />
+        <h4>How to calculate loan interest rate</h4>
+        <p>
+          Interest is the price you pay to borrow money from someone else. If
+          you take out a $20,000 personal loan, you may wind up paying the
+          lender a total of almost $23,000 over the next five years. That extra
+          $3,000 is the interest.&nbsp;<a href="#">see more...</a>
+        </p>
+      </div>
+      <div class="news2">
+        <img
+          src="https://media.premiumtimesng.com/wp-content/files/2021/09/NIGERIAN-BANKS.jpg"
+          alt=""
+          width="150"
+          height="150"
+        />
+        <h4>Nigerian banks and interest rate</h4>
+        <p>
+          Lending interest rate (%) in Nigeria was reported at 13.64 % in 2020,
+          according to the World Bank collection of development indicators,
+          compiled from officially recognized sources. Nigeria - Lending
+          interest rate - actual values, historical data, forecasts and
+          projections were sourced from the World Bank on February of
+          2022.&nbsp;<a href="#">see more...</a>
+        </p>
+      </div>
+      <div class="news3">
+        <img
+          src="https://5.imimg.com/data5/TN/NR/OU/SELLER-61209269/unsecured-personal-loans-500x500.jpg"
+          alt=""
+          width="150"
+          height="150"
+        />
+        <h4>Dangers of unsecured loans</h4>
+        <p>
+          Just because you qualify for a personal loan doesn’t mean you should
+          take it. Some personal loans come with interest rates well below 10%,
+          while others may be three or four times higher. The interest rates on
+          these loans depend on your credit score, but lenders may charge
+          whatever they want, provided the rate falls within certain
+          laws.&nbsp;<a href="#">see more...</a>
+        </p>
+      </div>
+      <div class="news4">
+        <img
+          src="https://www.nationalbusinesscapital.com/wp-content/uploads/2017/06/long-term-business-loans.jpg"
+          alt=""
+          width="150"
+          height="150"
+        />
+        <h4>Benfits of long term loans</h4>
+        <p>
+          Long term loans can be a positive exercise for the consumer and a
+          business. The flexibility of an investor’s limited capital is
+          increased while the positive credit that they have developed makes it
+          easier and potentially cheaper to borrow in the future.&nbsp;<a
+            href="#"
+            >see more...</a
+          >
+        </p>
+      </div>
+    </div>
+    <!--news-->
+    <div class="footer">
+      <p>copyright WillsCode, Inc 2022. All Rights Reserved</p>
+    </div>
+    <!--footer-->
+
+    <script>
+      function myFunction() {
+        let loan = parseInt(document.getElementById("loan").value);
+        let rates = parseInt(document.getElementById("rate").value);
+        let terms = parseInt(document.getElementById("term").value);
+        let fees = parseInt(document.getElementById("fees").value);
+
+        if ((fees = null)) {
+          return fees == 0;
+        }
+
+        rates /= 100;
+
+        const interest = Math.floor(loan * rates * terms);
+        const total = Math.floor(interest + loan + fees);
+        let monthly = total / (terms * 12);
+        monthly = monthly.toFixed(2);
+        let month = terms * 12;
+
+        document.getElementById("main").innerHTML =
+          "For a loan of" + "   " + "" + "#" + loan;
+        document.getElementById("interest").innerHTML = "#" + " " + interest;
+        document.getElementById("cummulative").innerHTML = "#" + " " + total;
+        document.getElementById("months").innerHTML = month;
+        document.getElementById("permonth").innerHTML = "#" + " " + monthly;
+      }
+      function viewBox() {
+        var x = document.getElementById("display");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
